@@ -9,7 +9,7 @@ export default function Home() {
   const [Followers, setFollowers] = useState([])
   const [FollowersUser, setFollowersUser] = useState([])
   const Searching = async () => {
-    if (userName) {
+    if (userName) { 
       let response = await fetch(`https://api.github.com/users/${userName}`)
       response = await response.json()
       setData(response)
@@ -24,11 +24,15 @@ export default function Home() {
     setUserName(e.target.value)
   }
 
-  const getFollowers = async () => {
-    let bit = await fetch(data.followers_url)
-    bit = await bit.json()
-    setFollowers(bit)
-    console.log(bit)
+  const getFollowers = async (e) => {
+    try {let bit = await fetch(data.followers_url)
+      bit = await bit.json()
+      setFollowers(bit)
+      console.log(bit)}
+      catch (error){
+        alert(error)
+      }
+    
   }
   const FollowersFollowers = async (e) => {
     let response = await fetch(`https://api.github.com/users/${e}`)
