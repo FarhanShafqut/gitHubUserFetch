@@ -77,7 +77,7 @@ export default function Home() {
                 </div>
               </>
             }
-            <h1 className='text-center text-4xl font-semibold animate-pulse my-4 ' >Get Followers</h1>
+            <h1 className='text-center text-4xl font-semibold animate-pulse my-4 ' >Get Followers of Users</h1>
             <div className='max-w-7xl grid grid-cols-1 sm:grid-cols-4 px-4 gap-4 mt-4 '>
               <p className='hidden' ></p>
               {Followers.length >= 1 &&
